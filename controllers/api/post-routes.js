@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
-const { Post, User } = require('../../models');
+const { Post, User, Upvote } = require('../../models');
 /* const withAuth = require('../../utils/auth'); */
 
 // get all users
@@ -14,8 +14,8 @@ router.get('/', (req, res) => {
       'publish_date',
       'isbn',
       'description',
-      'created_at'
-      /* [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count'] */
+      'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM upvote WHERE post.id = upvote.post_id)'), 'upvote_count']
     ],
     include: [
       {
@@ -44,8 +44,8 @@ router.get('/:id', (req, res) => {
         'publish_date',
         'isbn',
         'description',
-        'created_at'
-      /* [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count'] */
+        'created_at',
+      [sequelize.literal('(SELECT COUNT(*) FROM upvote WHERE post.id = upvote.post_id)'), 'upvote_count']
     ],
     include: [
       {
@@ -85,15 +85,15 @@ router.post('/', /* withAuth, */ (req, res) => {
     });
 });
 
-/* router.put('/upvote', withAuth, (req, res) => {
+router.put('/upvote', /* withAuth, */ (req, res) => {
   // custom static method created in models/Post.js
-  Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+  Post.upvote({ ...req.body, user_id: req./* session */body.user_id }, { Upvote, User })
     .then(updatedVoteData => res.json(updatedVoteData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
-}); */
+});
 
 router.delete('/:id', /* withAuth, */ (req, res) => {
   console.log('id', req.params.id);
