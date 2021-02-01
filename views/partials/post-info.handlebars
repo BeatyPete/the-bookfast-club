@@ -20,8 +20,8 @@
     <div class="text-base row-span-full">Recommended by {{user.username}} on {{created_at}}</div>
     <div class=" grid grid-cols-2">
         
-        <button class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full place-self-center">
-        <div class="h-10 w-10 text-2xl">{{upvote_count}}</div>
+        <button class="like-btn px-2 inline-flex text-xs leading-5 font-semibold rounded-full place-self-center">
+        <div class="h-10 w-10 text-2xl" id="upvote_count">{{upvote_count}}</div>
         <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path
             stroke-linecap="round"
