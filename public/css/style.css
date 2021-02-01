@@ -1,10 +1,12 @@
+:root {
+    --primary-color: rgb(31,41,55);
+    --secondary-color: rgba(75,85,99);
+    --tertiary-color: rgba(79,70,229);
+}
+
 .post-container {
-    border: 2px black solid;
-    width: 50%;
-    margin: 1rem;
-    border-radius: 30px;
-    display: flex;
-    padding: 1rem;
+    background-color: var(--secondary-color);
+    color: lightgray;
 }
 .post-btn {
     border: 2px black solid;
@@ -13,4 +15,9 @@
 }
 .cover-img {
     border-radius: 5px;
+}
+
+
+.description {
+    width: 50rem;
 }
