@@ -17,9 +17,9 @@
     </div>
 </td>
 <td class="px-6 py-4 whitespace-nowrap grid grid-rows-2 flex space-y-6">
-    <div class="text-base row-span-full">Recommended by {{user.username}} on {{created_at}}</div>
+    <div class="text-base row-span-full">Recommended by {{user.username}} on {{format_date created_at}}</div>
+
     <div class=" grid grid-cols-2">
-        
         <button class="like-btn px-2 inline-flex text-xs leading-5 font-semibold rounded-full place-self-center">
         <div class="h-10 w-10 text-2xl" id="upvote_count">{{upvote_count}}</div>
         <svg class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -41,5 +41,5 @@
             />
         </svg>
         </button>
-    </div>  
+    </div>
 </td>
