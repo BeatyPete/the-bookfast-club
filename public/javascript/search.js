@@ -2,12 +2,13 @@
 $("#search-close-btn").click(function(){
     closeSearch()
 });
-$("#book-select").click(function(){
+$("#results").on("click", "#book-select", function(){
     closeSearch()
 });
 
 $("#book-search").submit(function(){
     openSearch()
+    getSearchResults()
 });
 
 const openSearch = () => {
@@ -35,4 +36,58 @@ const closeSearch = () => {
             $("#whole").addClass("hidden");
         }
     });
+}
+
+const getSearchResults = function (bookInfo) {
+    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=lord+of+the+rings`;
+    // // make a request to the url
+    fetch(apiUrl)
+      .then(function (response) {
+        // request was successful
+        if (response.ok) {
+          response.json().then(function (data) {
+            //send imdb id to getOmdb function to retrieve that specific movies data
+            displayResults(data)
+          });
+        } else {
+          // error message if an invalid entery/movie is submitted
+          console.log("Error: " + response.statusText);
+        }
+      })
+      .catch(function (error) {
+        // catch set up incase Open Weather is down or internet is disconnected
+        alert("Unable to connect to google books");
+      });
+  };
+
+const displayResults = function(bookData) {
+    const listContainerEl = $("#results")
+    listContainerEl.empty()
+
+    for (i = 0; i < bookData.items.length; i++) {
+        const resultsContainerEl = $("<div>")
+        resultsContainerEl.addClass("search-result-container p-2")
+        listContainerEl.append(resultsContainerEl);
+        
+        const titleEl = $("<div>")
+        titleEl.addClass("search-title")
+        titleEl.text(bookData.items[i].volumeInfo.title)
+        
+        const dateEl = $("<div>")
+        dateEl.text(`Published: ${bookData.items[i].volumeInfo.publishedDate}`)
+
+        const authorEl = $("<div>")
+        authorEl.text(bookData.items[i].volumeInfo.authors)
+
+        const btnContainerEl = $("<div>")
+        btnContainerEl.addClass("flex justify-end")
+        const btnEl = $("<button>")
+        btnEl.addClass("group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500")
+        btnEl.attr("id", "book-select")
+        btnEl.text("Recommend this book")
+        btnContainerEl.append(btnEl)
+
+        resultsContainerEl.append(titleEl, dateEl, authorEl, btnContainerEl)
+    }
+    
 }
