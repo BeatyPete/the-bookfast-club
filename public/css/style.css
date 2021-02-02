@@ -16,6 +16,13 @@
 .login-form-container {
     border: 2px solid var(--tertiary-color);
     border-radius: 5px;
+    text-align: center;
+}
+.signup-link {
+    color: var(--tertiary-color);
+}
+.signup-link:hover {
+    text-decoration: underline;
 }
 
 .description {
