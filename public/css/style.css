@@ -21,3 +21,24 @@
 .description {
     width: 50rem;
 }
+
+.search-result-container{
+    border-bottom: 2px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    color: lightgray;
+}
+.search-result-container:first-child{
+    border-radius: 5px 5px 0 0;
+}
+.search-result-container:last-child{
+    border-radius: 0 0 5px 5px;
+    border-bottom: none;
+}
+.search-result-container:only-child{
+    border-radius: 5px;
+    border-bottom: none;
+}
+
+.search-title {
+    font-size: 1.3rem
+}
