@@ -20,6 +20,12 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username']
+      },
+      {
+        model: Upvote,
+        where: {
+          user_id: req.session.user_id
+        }
       }
     ]
   })
@@ -29,6 +35,20 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+/* router.get('/upvote', (req, res) => {
+  // custom static method created in models/Post.js
+  Upvote.findAll({
+    where: {
+      user_id: req.session.user_id
+    }
+  })
+    .then(updatedVoteData => res.json(updatedVoteData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+}); */
 
 router.get('/:id', (req, res) => {
   Post.findOne({
