@@ -8,7 +8,8 @@ $("#results").on("click", "#book-select", function(){
 
 $("#book-search").submit(function(){
     openSearch()
-    getSearchResults()
+    const searchTerms = document.querySelector('#search-terms-input').value
+    getSearchResults(searchTerms)
 });
 
 const openSearch = () => {
@@ -39,7 +40,7 @@ const closeSearch = () => {
 }
 
 const getSearchResults = function (bookInfo) {
-    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=lord+of+the+rings`;
+    const apiUrl = `https://www.googleapis.com/books/v1/volumes?q=${JSON.stringify(bookInfo.replace(/\s/g, "+"))}`;
     // // make a request to the url
     fetch(apiUrl)
       .then(function (response) {
