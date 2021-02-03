@@ -4,6 +4,22 @@
     --tertiary-color: rgba(79,70,229);
 }
 
+.hero {
+    background-image: url(../images/hero.jpg);
+}
+
+.book-bg {
+    background-image: url(../images/clean-bg.jpg);
+    height: 800px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.post-grid {
+    height: 90%;
+    width: 70%;
+}
 .post-container {
     background-color: var(--secondary-color);
     color: lightgray;
