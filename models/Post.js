@@ -41,11 +41,10 @@ Post.init(
       allowNull: false
     },
     cover_img_url: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
+      type: DataTypes.TEXT,
+      /* validate: {
         isURL: true
-      }
+      } */
     },
     author: {
         type: DataTypes.STRING,
