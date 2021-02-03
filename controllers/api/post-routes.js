@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
   Post.findAll({
     limit,
     offset,
-    order: [['Post', 'id', 'DESC']],
+    order: [['id', 'DESC']],
     attributes: [
       'id',
       'title',
