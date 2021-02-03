@@ -49,6 +49,15 @@ router.get('/', (req, res) => {
     });
 });
 
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+
+  res.render('signup');
+});
+
 router.get('/:id', (req, res) => {
   const page = req.params.id;
   const offset = page * 10;
@@ -94,15 +103,6 @@ router.get('/:id', (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
-
-router.get('/signup', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-
-  res.render('signup');
 });
 
 module.exports = router;
