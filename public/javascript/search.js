@@ -2,7 +2,7 @@
 $("#search-close-btn").click(function(){
     closeSearch()
 });
-$("#results").on("click", "#book-select", function(){
+$("#results").on("click", ".book-select", function(){
     closeSearch()
 });
 
@@ -83,8 +83,8 @@ const displayResults = function(bookData) {
         const btnContainerEl = $("<div>")
         btnContainerEl.addClass("flex justify-end")
         const btnEl = $("<button>")
-        btnEl.addClass("group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500")
-        btnEl.attr("id", "book-select")
+        btnEl.addClass("book-select group relative py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500")
+        btnEl.attr("id", bookData.items[i].id)
         btnEl.text("Recommend this book")
         btnContainerEl.append(btnEl)
 
