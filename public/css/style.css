@@ -22,6 +22,7 @@
 .post-grid {
     height: 90%;
     width: 1020px;
+    z-index: 0;
 }
 .post-container {
     border-radius: 30px;
@@ -48,6 +49,7 @@
 .post-title {
     font-size: 1.2rem;
     color: var(--tertiary-color);
+    line-height: 1;
 }
 .post-title:hover {
     text-decoration: underline;
@@ -55,9 +57,11 @@
 
 .post-btn-container {
     display: flex;
+    z-index: -1;
     flex-direction: column;
     align-self: center;
     position: relative;
+    opacity: 0%;
     left: 0;
     transition: .6s;
 }
@@ -75,6 +79,7 @@
     height: 50px;
 }
 .post-container:hover .post-btn-container {
+    opacity: 100%;
     left: 30px;
 }
 .liked {
