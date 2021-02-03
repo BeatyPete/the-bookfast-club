@@ -4,7 +4,13 @@ const { Post, User, Upvote } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
+  const offset = 0 * 10;
+  const limit = 10;
+
   Post.findAll({
+    limit,
+    offset,
+    order: [['id', 'DESC']],
     attributes: [
       'id',
       'title',
@@ -20,13 +26,13 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username']
-      },
+      }/* ,
       {
         model: Upvote,
         where: {
           user_id: req.session.user_id
         }
-      }
+      } */
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -55,6 +61,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
+    order: [['id', 'DESC']],
     attributes: [
         'id',
         'title',
@@ -86,7 +93,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', /* withAuth, */ (req, res) => {
+router.post('/', withAuth, (req, res) => {
   Post.create({
     title: req.body.title,
     cover_img_url: req.body.cover_img_url,
@@ -94,8 +101,7 @@ router.post('/', /* withAuth, */ (req, res) => {
     publish_date: req.body.publish_date,
     isbn: req.body.isbn,
     description: req.body.description,
-    /* user_id: req.session.user_id */
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -114,7 +120,7 @@ router.put('/upvote', withAuth, (req, res) => {
     });
 });
 
-router.delete('/:id', /* withAuth, */ (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({
     where: {

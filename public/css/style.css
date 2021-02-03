@@ -4,13 +4,106 @@
     --tertiary-color: rgba(79,70,229);
 }
 
-.post-container {
-    background-color: var(--secondary-color);
-    color: lightgray;
+.hero {
+    background-image: url(../images/hero.jpg);
 }
 
+.book-bg {
+    background-image: url(../images/clean-bg.jpg);
+    height: 800px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+@keyframes btn-slide {
+
+}
+.post-grid {
+    height: 90%;
+    width: 1020px;
+    z-index: 0;
+}
+.post-container {
+    border-radius: 30px;
+    padding: .5rem 0 .5rem .5rem;
+    width: 90%;
+    background: linear-gradient(125deg, rgba(205,205,205,0) 0%, rgba(205,205,205,1) 100%);
+    max-height: 150px;
+    display: flex;
+}
+.content-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+}
+.cover-img {
+    max-height: 120px;
+    border-radius: 2px;
+}
+.post-text {
+    width: 100%;
+    padding-left: 10px;
+}
+.post-title {
+    font-size: 1.2rem;
+    color: var(--tertiary-color);
+    line-height: 1;
+}
+.post-title:hover {
+    text-decoration: underline;
+}
+
+.post-btn-container {
+    display: flex;
+    z-index: -1;
+    flex-direction: column;
+    align-self: center;
+    color: aliceblue;
+    position: relative;
+    opacity: 0%;
+    left: 0;
+    transition: .6s;
+}
+.post-btn-icon {
+    height: 30px;
+}
+.like-btn {
+    background-color: var(--primary-color);
+    border-radius: 0 5px 0 0;
+    height: 40px;
+}
+.fav-btn {
+    background-color: var(--secondary-color);
+    border-radius: 0 0 5px 0;
+    height: 40px;
+}
+.post-container:hover .post-btn-container {
+    opacity: 100%;
+    left: 30px;
+}
 .liked {
     color: var(--tertiary-color);
+}
+
+.page-btn {
+    background-color: cornflowerblue;
+    border-radius: 50%;
+}
+.page-num {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 60px;
+    color: black;
+    font-size: 1.5rem;
+}
+#left-pg {
+    margin-right: 500px;
+}
+#right-pg {
+    margin-left: 500px;
 }
 
 .login-form-container {
