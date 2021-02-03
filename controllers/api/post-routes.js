@@ -4,7 +4,12 @@ const { Post, User, Upvote } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
+  const offset = 0 * 10;
+  const limit = 10;
+
   Post.findAll({
+    limit,
+    offset,
     attributes: [
       'id',
       'title',
@@ -20,13 +25,13 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username']
-      },
+      }/* ,
       {
         model: Upvote,
         where: {
           user_id: req.session.user_id
         }
-      }
+      } */
     ]
   })
     .then(dbPostData => res.json(dbPostData))

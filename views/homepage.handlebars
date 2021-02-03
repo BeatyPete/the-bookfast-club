@@ -1,13 +1,9 @@
-<div class="flex flex-col m-10">    
-    <table class="min-w-full">
-        <tbody class="divide-y divide-gray-200">
-            {{#each posts as |post|}}
-            <tr id="{{id}}" class="h-40 post-container">
-                {{> post-info post}}
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
+<div class="book-bg flex justify-center items-center">
+    <div class="post-grid grid grid-cols-2 gap-4">
+        {{#each posts as |post|}}
+            {{> post-info post}}
+        {{/each}}
+    </div>
 </div>
 
 {{!-- {{#if loggedIn}} --}}

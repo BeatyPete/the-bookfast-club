@@ -122,7 +122,7 @@
 
 <!-- Main -->
 
-<main class="book-bg font-serif flex justify-center items-center">
+<main class="font-serif">
 
   <!-- <article class="post-container">
     <img class="cover-img" src="http://books.google.com/books/content?id=lqHNugAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" >
@@ -147,18 +147,29 @@
             time with an exclusive cover image from Peter Jackson's award-winning trilogy.</p>
     
   </article> -->
+  <div class="book-bg flex justify-around items-center">
 
-  <div class="post-grid grid grid-cols-2 gap-4">
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
-    <article>1</article>
+      <button id="prev" class="page-btn">prev</button>
+    
+    <div class="post-grid grid grid-cols-2 gap-4">
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+      <article class="post-container">1</article>
+    </div>
+
+      <button id="next" class="page-btn">next</button>
+
+  </div>
+  <div class="page-num">
+    <p id="left-pg">1</p>
+    <p id="right-pg">2</p>
   </div>
 
 </main>
@@ -180,6 +191,6 @@
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./javascript/search.js"></script>
+    <script src="./javascript/pages.js"></script>
  </body>
  </html>
