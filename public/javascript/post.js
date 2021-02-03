@@ -26,9 +26,10 @@ const getPostData = function (id) {
 async function postResults(bookData) {
     /* these const decide what goes into the post. isbn is actually a link to the book */
     const title = `${bookData.volumeInfo.title}`
-    var cover_img_url = `${bookData.volumeInfo.imageLinks.thumbnail}`
     if (!bookData.volumeInfo.imageLinks) {
         var cover_img_url = '/images/no-img.jpg'
+    } else {
+        var cover_img_url = `${bookData.volumeInfo.imageLinks.thumbnail}`
     }
     const author = `${bookData.volumeInfo.authors}`
     const publish_date = `${bookData.volumeInfo.publishedDate}`
