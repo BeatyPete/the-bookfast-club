@@ -20,3 +20,22 @@ $("#next").on("click", function() {
     const page = parseInt(num) + 1
     document.location.replace(`/${page}`)
 })
+
+const pageNumDisplay = function() {
+    if (document.location.pathname === "/") {
+        $("#left-pg").text("1")
+        $("#right-pg").text("2")
+    }
+    else {       
+        let queryNum = document.location.pathname.split("/")[1]
+        var rightNum = 2 
+        for (i = 0; i < queryNum; i++) {
+            var rightNum = rightNum + 2
+        }
+        var leftNum = rightNum - 1
+        $("#left-pg").text(parseInt(leftNum))
+        $("#right-pg").text(parseInt(rightNum))
+    }
+}
+
+pageNumDisplay()
