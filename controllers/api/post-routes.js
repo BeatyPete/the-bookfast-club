@@ -119,6 +119,27 @@ router.put('/upvote', withAuth, (req, res) => {
     });
 });
 
+router.delete('/upvote', withAuth, (req, res) => {
+  console.log('id', req.params.id);
+  Upvote.destroy({
+    where: {
+      post_id: req.body.post_id,
+      user_id: req.session.user_id
+    }
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No vote found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.delete('/:id', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Post.destroy({

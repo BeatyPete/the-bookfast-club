@@ -9,8 +9,7 @@ $(".like-btn").on(
             const count = parseInt(counter.text()) - 1
             counter.text(count)
             const post_id = $(this).parents('article').attr('id')
-            console.log(post_id)
-            /* add call for decreasing vote count here */
+            downvoteClickHandler(post_id)
         }
         else {
             $(this).addClass("liked");
@@ -28,6 +27,25 @@ async function upvoteClickHandler(id) {
 
     const response = await fetch('/api/posts/upvote', {
         method: 'PUT',
+        body: JSON.stringify({
+        post_id: id
+        }),
+        headers: {
+        'Content-Type': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        /* document.location.reload(); */
+    } else {
+        alert(response.statusText);
+    }
+}
+
+async function downvoteClickHandler(id) {
+
+    const response = await fetch(`/api/posts/upvote`, {
+        method: 'DELETE',
         body: JSON.stringify({
         post_id: id
         }),
