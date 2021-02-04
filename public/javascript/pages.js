@@ -25,8 +25,11 @@ const pageNumDisplay = function() {
     if (document.location.pathname === "/") {
         $("#left-pg").text("1")
         $("#right-pg").text("2")
+        /* git rid of left page button */
+        
     }
     else {       
+        $("#prev").toggleClass("invisible")
         let queryNum = document.location.pathname.split("/")[1]
         var rightNum = 2 
         for (i = 0; i < queryNum; i++) {
