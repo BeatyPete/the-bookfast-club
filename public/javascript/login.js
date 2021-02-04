@@ -8,10 +8,6 @@ $("#options-menu").on("click", function() {
     $("#login-menu").toggleClass("visible");
 });
 
-$('#login-form').on("submit", function() {
-
-})
-
 async function loginFormHandler(event) {
     event.preventDefault();
   
