@@ -6,7 +6,10 @@
               <a href="{{isbn}}" target="_blank">{{title}}</a>
             </h1>
             <p>Written by {{author}}</p>
-            <p>Published: {{publish_date}}</p>
+            <div class="flex justify-between">
+              <p>Published: {{publish_date}}</p>
+              <p>likes: {{upvote_count}}</p>
+            </div>
             <p class="text-right">Recommended by {{user.username}} on {{format_date created_at}}</p>
           </div>
  
