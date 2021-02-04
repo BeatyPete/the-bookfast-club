@@ -1,10 +1,30 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Upvote } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] }
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/upvotes', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.session.user_id
+    },
+    include: [
+      {
+        model: Upvote,
+        attributes: ['post_id']
+      }
+    ]
   })
     .then(dbUserData => res.json(dbUserData))
     .catch(err => {

@@ -26,13 +26,13 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }/* ,
+      },
       {
         model: Upvote,
         where: {
-          user_id: req.session.user_id
+          user_id: req.body.user_id
         }
-      } */
+      }
     ]
   })
     .then(dbPostData => res.json(dbPostData))
@@ -61,7 +61,6 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id
     },
-    order: [['id', 'DESC']],
     attributes: [
         'id',
         'title',
@@ -114,6 +113,27 @@ router.put('/upvote', withAuth, (req, res) => {
   // custom static method created in models/Post.js
   Post.upvote({ ...req.body, user_id: req.session.user_id }, { Upvote, User })
     .then(updatedVoteData => res.json(updatedVoteData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.delete('/upvote', withAuth, (req, res) => {
+  console.log('id', req.params.id);
+  Upvote.destroy({
+    where: {
+      post_id: req.body.post_id,
+      user_id: req.session.user_id
+    }
+  })
+    .then(dbPostData => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'No vote found with this id' });
+        return;
+      }
+      res.json(dbPostData);
+    })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
