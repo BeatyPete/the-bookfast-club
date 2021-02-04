@@ -41,4 +41,12 @@ const pageNumDisplay = function() {
     }
 }
 
+/* if non loggedin user presses post btns redirect them to signup */
+const redirect = function() {
+    document.location.replace('/signup');
+  }
+
 pageNumDisplay()
+
+document.querySelector('.like-btn').addEventListener('click', redirect);
+document.querySelector('.fav-btn').addEventListener('click', redirect);
