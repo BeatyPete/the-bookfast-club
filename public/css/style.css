@@ -88,8 +88,25 @@
 }
 
 .page-btn {
-    background-color: cornflowerblue;
-    border-radius: 50%;
+    opacity: 80%;
+    position: relative;
+}
+#prev {
+    background-color: #16a5f7;
+    right: 18px;
+    height: 70px;
+    bottom: 180px;
+    border-radius: 10px 0 0 10px;
+}
+#next {
+    background-color: #db004d;
+    left: 15px;
+    height: 70px;
+    border-radius: 0 10px 10px 0;
+    bottom: 180px;
+}
+.page-btn-icon {
+    height: 40px;
 }
 .page-num {
     display: flex;
