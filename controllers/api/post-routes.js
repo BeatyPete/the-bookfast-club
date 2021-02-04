@@ -26,13 +26,13 @@ router.get('/', (req, res) => {
       {
         model: User,
         attributes: ['username']
-      }/* ,
+      },
       {
         model: Upvote,
         where: {
-          user_id: req.session.user_id
+          user_id: req.body.user_id
         }
-      } */
+      }
     ]
   })
     .then(dbPostData => res.json(dbPostData))

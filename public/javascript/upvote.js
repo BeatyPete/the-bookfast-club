@@ -42,3 +42,34 @@ async function upvoteClickHandler(id) {
         alert(response.statusText);
     }
 }
+
+/* getuserlikes and updatecolor are the functions that load the color of the like btn and counter if the user has like the post*/
+async function getUserLikes() {
+    const response = await fetch('/api/users/upvotes', {
+        method: 'GET',
+        headers: {
+        'Content-Type': 'application/json'
+        }
+    });
+
+    if (response.ok) {
+        response.json()
+        .then( data => updateColor(data))
+    } else {
+        alert(response.statusText);
+    }
+}
+const updateColor = function(data) {
+    for (i = 0; i < $("article").length; i++) {
+        let id = $("article")[i].id
+        for (p = 0; p < data.upvotes.length; p++) {
+            if (parseInt(id) === data.upvotes[p].post_id) {
+                $(`#${id}`).find("span").addClass("liked")
+                $(`#${id}`).find(".like-btn").addClass("liked")
+            }
+            
+        }
+    }
+}
+
+getUserLikes()
