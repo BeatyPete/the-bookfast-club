@@ -41,6 +41,7 @@
 .cover-img {
     max-height: 120px;
     border-radius: 2px;
+    max-width: 90px;
 }
 .post-text {
     width: 100%;
