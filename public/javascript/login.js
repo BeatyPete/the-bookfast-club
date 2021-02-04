@@ -32,4 +32,17 @@ async function loginFormHandler(event) {
     }
 }
 
+const pageCheck = function() {
+  if (document.location.pathname != "/signup") {
+    document.querySelector('.like-btn').addEventListener('click', redirect);
+    document.querySelector('.fav-btn').addEventListener('click', redirect);
+  }
+}
+/* if non loggedin user presses post btns redirect them to signup */
+const redirect = function() {
+  document.location.replace('/signup');
+}
+
+pageCheck()
+
 document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
