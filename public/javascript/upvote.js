@@ -4,18 +4,20 @@ $(".like-btn").on(
         /* if the like button is clicked it changes the color and either + or - the displayed number*/
         if($(this).hasClass('liked')) {
             $(this).removeClass('liked');
-            const counter = $(this).children('#upvote_count')
+            const counter = $(this).parents("article").find(".upvote_count")
+            counter.removeClass("liked")
             const count = parseInt(counter.text()) - 1
             counter.text(count)
-            const post_id = $(this).parents('tr').attr('id')
+            const post_id = $(this).parents('article').attr('id')
             console.log(post_id)
             /* add call for decreasing vote count here */
         }
         else {
             $(this).addClass("liked");
-            const counter = $(this).children('#upvote_count')
+            const counter = $(this).parents("article").find(".upvote_count")
+            counter.addClass("liked")
             const count = parseInt(counter.text()) + 1
-            const post_id = $(this).parents('tr').attr('id')
+            const post_id = $(this).parents('article').attr('id')
             counter.text(count) 
             upvoteClickHandler(post_id)           
         }
