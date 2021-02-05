@@ -1,7 +1,21 @@
 :root {
-    --primary-color: rgb(31,41,55);
+    --primary-color: rgb(75, 143, 92);
     --secondary-color: rgba(75,85,99);
-    --tertiary-color: rgba(79,70,229);
+    --tertiary-color: rgb(175, 219, 168);
+}
+
+
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.tertiary-background  {
+    background-color: var(--tertiary-color);
+}
+
+.primary-button {
+    background-color: var(--primary-color);
 }
 
 .hero {
@@ -49,7 +63,7 @@
 }
 .post-title {
     font-size: 1.2rem;
-    color: var(--tertiary-color);
+    color: var(--primary-color);
     line-height: 1;
 }
 .post-title:hover {
