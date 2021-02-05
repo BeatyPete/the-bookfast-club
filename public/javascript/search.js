@@ -75,9 +75,11 @@ const displayResults = function(bookData) {
         titleEl.text(bookData.items[i].volumeInfo.title)
         
         const dateEl = $("<div>")
+        dateEl.addClass("text-black")
         dateEl.text(`Published: ${bookData.items[i].volumeInfo.publishedDate}`)
 
         const authorEl = $("<div>")
+        authorEl.addClass("text-black")
         authorEl.text(bookData.items[i].volumeInfo.authors)
 
         const btnContainerEl = $("<div>")
