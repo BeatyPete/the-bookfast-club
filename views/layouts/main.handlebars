@@ -15,17 +15,17 @@
         
         <div class="container mx-auto max-w-4xl md:flex justify-between items-center">
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book primary-text" viewBox="0 0 16 16">
                 <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>   
             </svg>
            
-            <a href="/" class="block py-6 w-full text-left md:text-left md:w-auto text-gray-600 no-underline">
+            <a href="/" class="block py-6 w-full text-left md:text-left md:w-auto primary-text no-underline">
                 Welcome to the Bookfast Club
             </a>
             {{#if loggedIn}}
             <div class="relative inline-block text-left">
                 <div>
-                <button type="button" class="inline-flex justify-center w-full bg-black text-white border border-gray-300 shadow-sm px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="logout-btn" aria-haspopup="true" aria-expanded="true">
+                <button type="button" class="inline-flex justify-center w-full tertiary-background text-black border border-gray-300 shadow-sm px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="logout-btn" aria-haspopup="true" aria-expanded="true">
                     Logout
                 </button>
                 </div>
@@ -33,7 +33,7 @@
             {{else}}
             <div class="relative inline-block text-left">
                 <div>
-                <button type="button" class="inline-flex justify-center w-full bg-black text-white border border-gray-300 shadow-sm px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
+                <button type="button" class="inline-flex justify-center w-full tertiary-background text-black border border-gray-300 shadow-sm px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
                     Login
                     <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                     <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
@@ -53,7 +53,7 @@
                             <label for="password" class="sr-only">Password</label>
                             <input id="password-login" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
                         </div>
-                        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-black tertiary-background hover:bg-green-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
                             <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                 <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
@@ -70,19 +70,19 @@
         </div>
     </header>
     
-    <nav class="w-full  md:pt-0 px-6 shadow-lg relative z-20 border-t border-b border-gray-400 bg-black ">
+    <nav class="w-full  md:pt-0 px-6 shadow-lg relative z-20 border-t border-b border-gray-400 tertiary-background ">
         <div class="container mx-auto max-w-4xl md:flex justify-between items-center text-sm md:text-md md:justify-start">
             <div class="w-full md:w-1/2 text-center md:text-left py-4 flex flex-wrap justify-center items-stretch md:justify-start md:items-start">
                 
             
-                <a href="/" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Home</a>
-                <a href="/dashboard" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">MyBookmarks</a>
+                <a href="/" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-black no-underline md:border-r border-gray-400">Home</a>
+                <a href="/dashboard" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-black no-underline md:border-r border-gray-400">MyBookmarks</a>
                 
             </div>
             {{#if loggedIn}}
             <div class="w-full md:w-1/2 text-center md:text-right pb-4 md:p-0">
                 <form id="book-search">
-                    <input id="search-terms-input" type="search" placeholder="Search..." class="bg-gray-300 border text-sm p-1">
+                    <input id="search-terms-input" type="search" placeholder="Search..." class="bg-gray-200 border text-sm p-1">
                 </form>
             </div>
             {{/if}}
@@ -93,8 +93,8 @@
 		
     <div class="hero w-full py-24 px-6 bg-cover bg-no-repeat bg-center relative z-10">
 		
-        <div class="container bg-black max-w-4xl mx-auto text-center">
-            <h1 class="text-xl bg-black leading-tight md:text-3xl text-center text-gray-100 mb-3">Take a look, It's in a book. Reading is lame and blows.</h1>
+        <div class="container tertiary-background max-w-4xl mx-auto text-center">
+            <h1 class="text-xl tertiary-background leading-tight md:text-3xl text-center text-black mb-3">"Because ...each one of us is a Brain..."</h1>
         </div>
 
     </div>
@@ -102,13 +102,13 @@
 {{#if loggedIn}}
 <div id="whole" class="hidden z-50 fixed inset-0 overflow-hidden">
     <div class="absolute inset-0 overflow-hidden">
-      <div id="search-background" class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+      <div id="search-background" class="absolute inset-0 bg-gray-300 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
       <section id="search" class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
         
         <div class="relative w-screen max-w-md">
           
           <div class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
-            <button id="search-close-btn" class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+            <button id="search-close-btn" class="rounded-md text-black focus:outline-none focus:ring-2 focus:ring-white">
               <span class="sr-only">Close panel</span>
               <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
