@@ -2,6 +2,7 @@
     --primary-color: rgb(75, 143, 92);
     --secondary-color: rgba(75,85,99);
     --tertiary-color: rgb(175, 219, 168);
+    --auxilary-color: #E9991E
 }
 
 
@@ -46,6 +47,15 @@
     max-height: 150px;
     display: flex;
 }
+
+.post-bookmark {
+    padding: .5rem 0 .5rem .5rem;
+    width: 98.3%;
+    background: linear-gradient(125deg, rgba(205,205,205,0) 0%, rgba(205,205,205,1) 100%);
+    max-height: 150px;
+    display: flex;
+}
+
 .content-container {
     display: flex;
     height: 100%;
@@ -99,7 +109,7 @@
     left: 30px;
 }
 .liked {
-    color: var(--tertiary-color);
+    color: var(--auxilary-color);
 }
 
 .page-btn {
@@ -156,7 +166,7 @@
 
 .search-result-container{
     border-bottom: 2px solid var(--primary-color);
-    background-color: var(--secondary-color);
+    background-color: var(--tertiary-color);
     color: lightgray;
 }
 .search-result-container:first-child{
@@ -172,5 +182,6 @@
 }
 
 .search-title {
-    font-size: 1.3rem
+    font-size: 1.3rem;
+    color: var(--secondary-color);
 }
