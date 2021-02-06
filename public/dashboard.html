@@ -4,6 +4,7 @@
   <title>The Bookfast Club</title>
   <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="text-gray-700 " style="font-family: 'Source Sans Pro', sans-serif">
 
@@ -20,18 +21,18 @@
                Welcome to the Bookfast Club
            </a>
            <div class="w-full md:w-auto mb-6 md:mb-0 text-center md:text-right">
-               <a href="#" class="inline-block no-underline bg-black text-white text-sm py-2 px-3">Login</a>
+               <a href="#" class="inline-block no-underline bg-gray-300 text-white text-sm py-2 px-3">Login</a>
            </div> 
        </div>
    </header>
    
-   <nav class="w-full  md:pt-0 px-6 shadow-lg relative z-20 border-t border-b border-gray-400 bg-black ">
+   <nav class="w-full  md:pt-0 px-6 shadow-lg relative z-20 border-t border-b border-gray-400 bg-green-400 ">
        <div class="container mx-auto max-w-4xl md:flex justify-between items-center text-sm md:text-md md:justify-start">
            <div class="w-full md:w-1/2 text-center md:text-left py-4 flex flex-wrap justify-center items-stretch md:justify-start md:items-start">
                
            
-               <a href="" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Home</a>
-               <a href="" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Dashboard</a>
+               <a href="/index.html" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Home</a>
+               <a href="/profile.html" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Dashboard</a>
                <a href="#" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400"> Read List </a>
                
            </div>
@@ -43,7 +44,18 @@
 
 
   
+    
+
+    
+
+
+    
+  
+    
+  
    
+       
+  
 
 <!-- Main -->
 
@@ -56,7 +68,7 @@
         <div class="flex items-center justify-center">
           
           <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-              My<span class="text-indigo-600 ">Bookmark</span>
+              My<span class="text-green-600 ">Bookmark</span>
             </h2>
         </div>
       </div>
@@ -64,10 +76,10 @@
 
       <!-- Title Containers-->
       <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4">
-        <div class="col-span-1 bg-blue-300 text-center text-4xl text-white font-senrif border-8 border-blue-600"> ReadList
+        <div class="col-span-1 bg-green-300 text-center text-4xl text-white font-senrif border-8 border-green-600"> My Recommendations
             
         </div>
-        <div class="col-span-2 bg-black text-center text-4xl text-white font-serif border-8 border-blue-600"> My Content
+        <div class="col-span-2 bg-green-400 text-center text-4xl text-white font-serif border-8 border-green-600"> Read List (Future Readings)
 
            
         </div>
@@ -88,34 +100,113 @@
 
               <!-- Javascript cards/posts will be below -->
             <div id="blah" class="blah">
+                
             </div>
 
             
+            
+
         </div>
        
-        <div class="col-span-2 bg-gray-600 border-8 border-indigo"> 2
+        <div class="col-span-2 bg-gray-600 border-8 border-indigo"> 
 
-             <!-- Javascript cards/posts will be below -->
-            <div id="blah" class="blah">
-            </div>
+            <article class="post-container">
+                <div class="content-container">
+                  <img class="cover-img" src="http://books.google.com/books/content?id=lqHNugAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" >
+                  <div class="post-text">
+                    <h1 class="post-title">
+                      <a href="https://play.google.com/store/books/details?id=L2RuDwAAQBAJ&source=gbs_api" target="_blank">The Fellowship of the Ring</a>
+                    </h1>
+                    <p>Written by J. R. R. Tolkien</p>
+                    <div>
+                      <p>Published: </p>
+                      <p>likes: 13</p>
+                    </div>
+                    
+                    <p class="text-right">Recommended by beatypete</p>
+                  </div>
+         
+                </div>
+                <div class="post-btn-container">
+                  <button class="like-btn">
+                    <svg class="post-btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"
+                      />
+                  </svg>
+                  </button>
+                  <button class="fav-btn">
+                    <svg class="post-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
 
+              <article class="post-container">
+                <div class="content-container">
+                  <img class="cover-img" src="http://books.google.com/books/content?id=lqHNugAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api" >
+                  <div class="post-text">
+                    <h1 class="post-title">
+                      <a href="https://play.google.com/store/books/details?id=L2RuDwAAQBAJ&source=gbs_api" target="_blank">The Fellowship of the Ring</a>
+                    </h1>
+                    <p>Written by J. R. R. Tolkien</p>
+                    <div>
+                      <p>Published: </p>
+                      <p>likes: 13</p>
+                    </div>
+                    
+                    <p class="text-right">Recommended by beatypete</p>
+                  </div>
+         
+                </div>
+                <div class="post-btn-container">
+                  <button class="like-btn">
+                    <svg class="post-btn-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M2 10.5a1.5 1.5 0 113 0v6a1.5 1.5 0 01-3 0v-6zM6 10.333v5.43a2 2 0 001.106 1.79l.05.025A4 4 0 008.943 18h5.416a2 2 0 001.962-1.608l1.2-6A2 2 0 0015.56 8H12V4a2 2 0 00-2-2 1 1 0 00-1 1v.667a4 4 0 01-.8 2.4L6.8 7.933a4 4 0 00-.8 2.4z"
+                      />
+                  </svg>
+                  </button>
+                  <button class="fav-btn">
+                    <svg class="post-btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
            
         </div>
 
       </div>
 
+
+
+
+
+ 
+
+    
   </main>
 
 
 
 
 
-    
   
-  
-  
-  
-  
+
+
+
+
+
+       
+          
 
    <footer class="w-full bg-white px-6 border-t">
        <div class="container mx-auto max-w-4xl py-6 flex flex-wrap md:flex-no-wrap justify-between items-center text-sm">
