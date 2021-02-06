@@ -1,124 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>The Bookfast Club</title>
+  <title>Bookfast Club</title>
   <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/dash-style.css">
 </head>
-<body class="text-gray-700 " style="font-family: 'Source Sans Pro', sans-serif">
+<body class="text-gray-700" style="font-family: 'Source Sans Pro', sans-serif">
 
 
-   <header class="w-full px-6 bg-white">
+   <header class="w-full px-6">
        
        <div class="container mx-auto max-w-4xl md:flex justify-between items-center">
 
-           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+           <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-book primary-text" viewBox="0 0 16 16">
                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>   
            </svg>
           
-           <a href="#" class="block py-6 w-full text-left md:text-left md:w-auto text-gray-600 no-underline">
+           <a href="#" class="block py-6 w-full text-left md:text-left md:w-auto primary-text no-underline">
                Welcome to the Bookfast Club
            </a>
            <div class="w-full md:w-auto mb-6 md:mb-0 text-center md:text-right">
-               <a href="#" class="inline-block no-underline bg-black text-white text-sm py-2 px-3">Login</a>
+
+<div class="relative inline-block text-left">
+   <div>
+     <button type="button" class="inline-flex justify-center w-full tertiary-background text-black border border-gray-300 shadow-sm px-4 py-2 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500" id="options-menu" aria-haspopup="true" aria-expanded="true">
+       Login
+       <svg class="-mr-1 ml-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+       </svg>
+     </button>
+   </div>
+ 
+   
+   <div id="login-menu" class="invisible z-50 show origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+     <div class="p-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+       <form>
+           <div>
+               <label for="email-address" class="sr-only">Email</label>
+               <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
+             </div>
+             <div>
+               <label for="password" class="sr-only">Password</label>
+               <input id="password" name="password" type="password" autocomplete="current-password" required class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+             </div>
+             <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+               <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                 <svg class="h-5 w-5 text-black group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                   <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                 </svg>
+               </span>
+               Sign in
+             </button>
+       </form>
+     </div>
+   </div>
+ </div>
            </div> 
        </div>
    </header>
    
-   <nav class="w-full  md:pt-0 px-6 shadow-lg relative z-20 border-t border-b border-gray-400 bg-black ">
+   <nav class="w-full  md:pt-0 px-6 shadow-lg relative z-20 border-t border-b border-gray-400 tertiary-background ">
        <div class="container mx-auto max-w-4xl md:flex justify-between items-center text-sm md:text-md md:justify-start">
            <div class="w-full md:w-1/2 text-center md:text-left py-4 flex flex-wrap justify-center items-stretch md:justify-start md:items-start">
                
            
-               <a href="" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Home</a>
-               <a href="" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400">Dashboard</a>
-               <a href="#" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-white no-underline md:border-r border-gray-400"> Read List </a>
+               <a href="#" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-black no-underline md:border-r border-gray-400">Home</a>
+               <a href="#" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-black no-underline md:border-r border-gray-400">Favorites</a>
+               <a href="#" class="px-2 md:pl-0 md:mr-3 md:pr-3 text-black no-underline md:border-r border-gray-400"> Read List </a>
                
            </div>
            <div class="w-full md:w-1/2 text-center md:text-right pb-4 md:p-0">
+             <form id="book-search">
                <input type="search" placeholder="Search..." class="bg-gray-300 border text-sm p-1">
+             </form>
            </div>
        </div>
    </nav>
 
-
-  
    
+       
+   <div class="hero w-full py-24 px-6 bg-cover bg-no-repeat bg-center relative z-10">
+       
+       <div class="container max-w-4xl mx-auto text-center">
+           <h1 class="text-xl tertiary-background leading-tight md:text-3xl text-center text-black mb-3">The world's fastest growing online book club</h1>
+             
+       </div>
+
+   </div>
+
+
+<div id="whole" class="hidden z-50 fixed inset-0 overflow-hidden">
+   <div class="absolute inset-0 overflow-hidden">
+     <div id="search-background" class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+     <section id="search" class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
+       
+       <div class="relative w-screen max-w-md">
+         
+         <div class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
+           <button id="search-close-btn" class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+             <span class="sr-only">Close panel</span>
+             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+             </svg>
+           </button>
+         </div>
+         <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+           <div class="px-4 sm:px-6">
+             <h2 id="slide-over-heading" class="text-lg font-medium text-gray-900">
+               Panel title
+             </h2>
+           </div>
+           <div id="results" class="mt-6 relative flex-1 px-4 sm:px-6">
+             <!-- searched content here -->
+           </div>
+         </div>
+       </div>
+     </section>
+   </div>
+ </div>
+
 
 <!-- Main -->
 
 
+<main class="font-serif">
+
+<div class="p-4 text-white bg-white-500 rounded-md shadow-md">
+    <div class="flex items-center justify-center">
+        
+        <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+            My<span class="primary-text">Bookmark</span>
+        </h2>
+    </div>
+</div>
+
+<div class="label-grid grid grid-flow-col grid-cols-3 grid-rows-1">
+    <div class="col-span-1 tertiary-background text-center text-4xl text-black font-serif"> 
+        ReadList
+    </div>
+    <div class="col-span-2 primary-button text-center text-4xl text-white font-serif"> 
+        My Posts
+    </div>
+
+ </div>
+
+<section class="dash-container flex-1 pt-3 md:p-6 lg:mb-0 lg:min-h-0 lg:min-w-0">
+    <div class="flex flex-col lg:flex-row h-full w-full">
+        
+        <div class="w-1/3 border pb-2 lg:pb-0 px-3 flex flex-row lg:flex-col flex-wrap lg:flex-nowrap">
+        
+            <!-- control content left -->
+            <div class="bg-gray-200 w-full h-24 min-h-0 min-w-0 mb-4"></div>
+            
+            <div class="bg-gray-200 w-full h-24 min-h-0 min-w-0 mb-4"></div>
 
 
-
-<main>
-    <div class="p-4 text-white bg-white-500 rounded-md shadow-md">
-        <div class="flex items-center justify-center">
-          
-          <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-              My<span class="text-indigo-600 ">Bookmark</span>
-            </h2>
         </div>
-      </div>
+        
+        <div class="border h-full w-full lg:flex-1 px-3 min-h-0 min-w-0">
 
 
-      <!-- Title Containers-->
-      <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4">
-        <div class="col-span-1 bg-blue-300 text-center text-4xl text-white font-senrif border-8 border-blue-600"> ReadList
+        <!-- overflow content right -->
+        <div class="bg-gray-200 w-full h-full min-h-0 min-w-0 overflow-auto">
+            
+            
             
         </div>
-        <div class="col-span-2 bg-black text-center text-4xl text-white font-serif border-8 border-blue-600"> My Content
 
-           
+
         </div>
 
-     </div>
+    </div>
+</section>
 
+</main>
 
-
-
-
-
-
-
-<!-- Posts Containers -->
-
-    <div class="grid grid-flow-col grid-cols-3 grid-rows-1 gap-4">
-        <div class="col-span-1 bg-gray-300 border-8 border-indigo"> 1
-
-              <!-- Javascript cards/posts will be below -->
-              
-              <script src='./javascript/readlist.js'></script>
-              
-            <div id="blah" class="blah">
-            </div>
-
-            
-        </div>
-       
-        <div class="col-span-2 bg-gray-600 border-8 border-indigo"> 2
-
-             <!-- Javascript cards/posts will be below -->
-            <div id="blah" class="blah">
-            </div>
-
-           
-        </div>
-
-      </div>
-
-  </main>
-
-
-
-
-
-    
-  
-  
-  
-  
-  
+   
 
    <footer class="w-full bg-white px-6 border-t">
        <div class="container mx-auto max-w-4xl py-6 flex flex-wrap md:flex-no-wrap justify-between items-center text-sm">
@@ -135,8 +194,7 @@
 
 
    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
-   <script src="./assets/js/script.js"></script>
-
+   <script src="./javascript/pages.js"></script>
+   <script src="/javascript/search.js"></script>
 </body>
 </html>
