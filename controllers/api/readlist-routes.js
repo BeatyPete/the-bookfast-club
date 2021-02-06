@@ -1,13 +1,13 @@
 const router = require("express").Router();
-const sequelize = require("../config/connection");
-const { Post, User, ReadList } = require("../models");
+const sequelize = require("../../config/connection");
+const { Post } = require("../../models");
 
-// get all posts for dashboard
-router.get('/', (req, res) => {
+// get all added posts for readlist in dashboard
+router.get('/:id', (req, res) => {
   
     Post.findAll({
         where: {
-          post_id: req.session.user_id
+          post_id: req.params.post_id
         },
         order: [['id', 'DESC']],
         attributes: [
