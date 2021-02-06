@@ -1,16 +1,30 @@
 .dash-container {
-    height: 70vh;
+    height: 65vh;
+    padding-top: 0;
 }
 .my-post-container {
-    max-height: 70vh;
+    max-height: 65vh;
     overflow: auto;
 }
 .post-container {
-    margin: 5px;
+    margin: 5px 0 5px 5px;
 }
 /* .post-btn-container {
     z-index: auto;
 } */
 .hero {
     display: none;
+}
+.label-grid {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+.delete-btn {
+    background-color: rgb(204, 31, 19);
+    padding: 10px 0px;
+    height: fit-content;
+    border-radius: 0 5px 5px 0;
+}
+.delete-icon {
+    height: 40px;
 }
