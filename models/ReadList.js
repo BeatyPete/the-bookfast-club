@@ -30,7 +30,7 @@ ReadList.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: 'read_list'
+      modelName: 'readlist'
     }
   );
   
