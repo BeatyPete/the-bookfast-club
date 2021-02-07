@@ -1,5 +1,5 @@
 # the-bookfast-club
-  **bold** Create an account at Bookfast Club and recommend your favorite books to peers while you get recommendations from them! Use your Bookmark to keep taps on your current read list and your previous posts.
+  **Create an account at Bookfast Club and recommend your favorite books to peers while you get recommendations from them! Use your Bookmark to keep taps on your current read list and your previous posts.**
 
 ## Deployed Link:[Link](https://the-bookfast-club.herokuapp.com/) 
 
