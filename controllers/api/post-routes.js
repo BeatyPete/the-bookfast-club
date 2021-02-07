@@ -134,9 +134,9 @@ router.delete('/upvote', withAuth, (req, res) => {
     });
 });
 
-router.put('/readlist', /* withAuth, */ (req, res) => {
+router.put('/readlist', withAuth, (req, res) => {
   // custom static method created in models/Post.js
-  Post.readlist({ ...req.body, user_id: req./* session */body.user_id }, { Readlist, User })
+  Post.readlist({ ...req.body, user_id: req.session.user_id }, { Readlist, User })
     .then(updatedVoteData => res.json(updatedVoteData))
     .catch(err => {
       console.log(err);
@@ -144,12 +144,12 @@ router.put('/readlist', /* withAuth, */ (req, res) => {
     });
 });
 
-router.delete('/readlist', /* withAuth, */ (req, res) => {
+router.delete('/readlist', withAuth, (req, res) => {
   console.log('id', req.params.id);
   Readlist.destroy({
     where: {
       post_id: req.body.post_id,
-      user_id: req./* session */body.user_id
+      user_id: req.session.user_id
     }
   })
     .then(dbPostData => {

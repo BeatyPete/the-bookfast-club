@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Upvote } = require('../../models');
+const { User, Upvote, Readlist } = require('../../models');
 
 // get all users
 router.get('/', (req, res) => {
@@ -22,6 +22,26 @@ router.get('/upvotes', (req, res) => {
     include: [
       {
         model: Upvote,
+        attributes: ['post_id']
+      }
+    ]
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/readlist', (req, res) => {
+  User.findOne({
+    attributes: { exclude: ['password'] },
+    where: {
+      id: req.session.user_id
+    },
+    include: [
+      {
+        model: Readlist,
         attributes: ['post_id']
       }
     ]
