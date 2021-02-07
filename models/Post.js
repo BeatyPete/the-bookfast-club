@@ -25,6 +25,30 @@ class Post extends Model {
       });
     });
   }
+  static readlist(body, models) {
+    return models.Readlist.create({
+      user_id: body.user_id,
+      post_id: body.post_id
+    }).then(() => {
+      return Post.findOne({
+        where: {
+          id: body.post_id
+        },
+        attributes: [
+            'id',
+            'title',
+            'cover_img_url',
+            'author',
+            'publish_date',
+            'isbn',
+            'description',
+            'created_at',
+          [sequelize.literal('(SELECT COUNT(*) FROM upvote WHERE post.id = upvote.post_id)'), 'upvote_count'],
+          [sequelize.literal('(SELECT COUNT(*) FROM readlist WHERE post.id = readlist.post_id)'), 'readlist_count']
+        ],
+      });
+    });
+  }
 }
 
 // create fields/columns for Post model
