@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { User, Upvote, Readlist } = require('../../models');
-
+const { User, Upvote, Post, Readlist } = require('../../models');
+const sequelize = require('../../config/connection');
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
@@ -55,10 +55,42 @@ router.get('/readlist', (req, res) => {
 
 router.get('/:id', (req, res) => {
   User.findOne({
-    attributes: { exclude: ['password'] },
     where: {
-      id: req.params.id
+      id: req.body.user_id
     },
+    attributes: { exclude: ['password'] },
+    include: [
+      {
+        model: Post,
+        order: [['id', 'DESC']],
+        attributes: [
+          'id',
+          'title',
+          'cover_img_url',
+          'author',
+          'publish_date',
+          'isbn',
+          'description',
+          'created_at',
+          [sequelize.literal('(SELECT COUNT(*) FROM upvote WHERE id = upvote.post_id)'), 'upvote_count']
+        ],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          },
+        ]
+      },
+      {
+        model: Readlist,
+        include: [
+          {
+            model: Post,
+            attributes: { exclude: ['description', 'created_at'] }
+          }
+        ]
+      }
+    ]
   })
     .then(dbUserData => {
       if (!dbUserData) {

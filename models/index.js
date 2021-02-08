@@ -59,7 +59,7 @@ Post.belongsToMany(User, {
   through: Readlist,
   as: "readlisted_posts",
   foreignKey: "post_id",
-  onDelete: "SET NULL"
+  onDelete: "CASCADE"
 });
 
 Readlist.belongsTo(User, {
