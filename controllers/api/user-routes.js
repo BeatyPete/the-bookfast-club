@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const { User, Upvote } = require('../../models');
-
+const { User, Upvote, Post, Readlist } = require('../../models');
+const sequelize = require('../../config/connection');
 // get all users
 router.get('/', (req, res) => {
   User.findAll({
@@ -33,12 +33,64 @@ router.get('/upvotes', (req, res) => {
     });
 });
 
-router.get('/:id', (req, res) => {
+router.get('/readlist', (req, res) => {
   User.findOne({
     attributes: { exclude: ['password'] },
     where: {
-      id: req.params.id
+      id: req.session.user_id
     },
+    include: [
+      {
+        model: Readlist,
+        attributes: ['post_id']
+      }
+    ]
+  })
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.get('/:id', (req, res) => {
+  User.findOne({
+    where: {
+      id: req.body.user_id
+    },
+    attributes: { exclude: ['password'] },
+    include: [
+      {
+        model: Post,
+        order: [['id', 'DESC']],
+        attributes: [
+          'id',
+          'title',
+          'cover_img_url',
+          'author',
+          'publish_date',
+          'isbn',
+          'description',
+          'created_at',
+          [sequelize.literal('(SELECT COUNT(*) FROM upvote WHERE id = upvote.post_id)'), 'upvote_count']
+        ],
+        include: [
+          {
+            model: User,
+            attributes: ['username']
+          },
+        ]
+      },
+      {
+        model: Readlist,
+        include: [
+          {
+            model: Post,
+            attributes: { exclude: ['description', 'created_at'] }
+          }
+        ]
+      }
+    ]
   })
     .then(dbUserData => {
       if (!dbUserData) {
